@@ -37,13 +37,14 @@ def processing_data(file_path):
     df['Jenis Bencana'] = disaster
     df['Tahun'] = year
     df['id'] = df[['Wilayah', 'Jenis Bencana','Tahun']].sum(axis=1).map(hash)
+    df.fillna(0,inplace=True)
     
-    json_data = df.to_json(orient='records')
-    filename = f"E:/tugas_koko/Mencari_Kerja/Kerjaan/Data/{disaster}_{year}.json"
-    with open(filename, 'w') as f:
-        json.dump(json_data, f)
+    json_data=df.to_json(orient='records',indent=4)
+    filename = f"E:/tugas_koko/Mencari_Kerja/Kerjaan/Paw_Patrol/Development/Data/{disaster}_{year}.json"
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, ensure_ascii=False, indent=4)
 
-#     return df
+    # return df
 
     
     return json_data
