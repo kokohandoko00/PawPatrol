@@ -29,7 +29,7 @@ class Data(Resource):
         self.parser.add_argument("Kios", type=int, required=True)
         self.parser.add_argument("id", type=int, required=True)
         
-        json_dir = 'E:/tugas_koko/Mencari_Kerja/Kerjaan/Data'
+        json_dir = 'E:/tugas_koko/Mencari_Kerja/Kerjaan/Paw_Patrol/Development/Data'
         json_files = [f for f in os.listdir(json_dir) if f.endswith('.json')]
 
         # load data from each file into a dictionary and store in a list
